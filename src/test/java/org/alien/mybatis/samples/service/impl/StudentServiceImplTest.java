@@ -28,6 +28,7 @@ public class StudentServiceImplTest {
                 "C:\\Users\\lihoo\\Documents\\back_item\\myBatisDemo_4\\src\\main\\resources\\log4j.properties");
     }
 
+
     @Before
     public void setUp() throws Exception {
         studentService = new StudentServiceImpl();
@@ -64,9 +65,6 @@ public class StudentServiceImplTest {
         logger.debug(studentService.getStudentById(11));
 
     }
-//
-//    private static Logger logger = Logger.getLogger(Testspringmybanits.class);
-//    PropertyConfigurator.configure("E:/java/springtest/src/main/resources/log4j.properties");
 
     //end_Test
 }
