@@ -14,9 +14,9 @@
         <result property="favouriteSection" column="favouriteSection"/>
     </resultMap>
 
-    <!--<select id="getAuthorById" parameterMap="int" resultMap="author">-->
-        <!--SELECT * FROM author WHERE id=#{id}-->
-    <!--</select>-->
+    <select id="getAuthorById" parameterType="int" resultMap="author">
+        SELECT * FROM author WHERE id=#{id}
+    </select>
 
     <insert id="addAuthor" parameterType="author">
         INSERT INTO author(id, username) VALUES (#{id}, #{username})

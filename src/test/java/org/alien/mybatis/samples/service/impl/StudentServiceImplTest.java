@@ -2,6 +2,8 @@ package org.alien.mybatis.samples.service.impl;
 
 import org.alien.mybatis.samples.model.Student;
 import org.alien.mybatis.samples.service.StudentService;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +20,14 @@ import org.junit.Test;
 public class StudentServiceImplTest {
     private StudentService studentService;
 
+    private static Logger logger = Logger.getLogger(AuthorServiceImplTest.class);
+
+    @Before
+    public void addProperties() {
+        PropertyConfigurator.configure(
+                "C:\\Users\\lihoo\\Documents\\back_item\\myBatisDemo_4\\src\\main\\resources\\log4j.properties");
+    }
+
     @Before
     public void setUp() throws Exception {
         studentService = new StudentServiceImpl();
@@ -26,31 +36,33 @@ public class StudentServiceImplTest {
     @Test
     public void testAddStudent() throws Exception {
         Assert.assertEquals(true,studentService.addStudent
-                (new Student(50,"皮皮怪",999999999,
-                        "web工程师",20190707,"双鸭山大学",
-                        "8856","https://www.odd4loah.cn","你把闪现给我交了",
-                        "清哥","人们",1577811661,
-                        1893430861)) > 0);
+                (new Student(77,"看我蛇皮走位",85296374,
+                        "java工程师",528411501,"欧洲人大学",
+                        "8856","https://www.odd4loah.cn","你把闪现赶紧给我交了",
+                        "大司马","这一手很强",15541661,
+                        189856161)) > 0);
     }
 
     @Test
     public void testDeleteStudent() throws Exception {
-        Assert.assertEquals(true,studentService.deleteStudent(18) > 0);
+        Assert.assertEquals(true,studentService.deleteStudent(99) > 0);
     }
 //
     @Test
     public void testUpdateStudent() throws Exception {
         Assert.assertEquals(true,studentService.updateStudent
-                (new Student(20,"王实甫",1999999999,
-                "1web工程师",120190707,"1双鸭山大学",
-                "18856","1https://www.odd4loah.cn","1你把闪现给我交了",
-                "1清哥","1人们",1577811661,
-                1893430861)) > 0);
+                (new Student(20,"给你个BUFF",1999999999,
+                "性感java工程师",5896247,"家里呆不下大学",
+                "18856","1https://www.odd4loah.cn","鎏金哇卡一库咧",
+                "星妈buff","狗啊你是",1577811661,
+                8974512)) > 0);
     }
 
     @Test
     public void testGetStudentById() throws Exception {
-        studentService.getStudentById(10).getUsername();
+        studentService.getStudentById(11).getUsername();
+        logger.debug(studentService.getStudentById(11));
+
     }
 //
 //    private static Logger logger = Logger.getLogger(Testspringmybanits.class);

@@ -2,6 +2,8 @@ package org.alien.mybatis.samples.service.impl;
 
 import org.alien.mybatis.samples.model.Author;
 import org.alien.mybatis.samples.service.AuthorService;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +20,12 @@ import org.junit.Test;
 public class AuthorServiceImplTest {
     private AuthorService authorService;
 
+    private static Logger logger = Logger.getLogger(AuthorServiceImplTest.class);
+
+    @Before
+    public void addProperties() {
+        PropertyConfigurator.configure("C:\\Users\\lihoo\\Documents\\back_item\\myBatisDemo_4\\src\\main\\resources\\log4j.properties");
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -26,18 +34,29 @@ public class AuthorServiceImplTest {
 
     @Test
     public void testGetAllAuthors() throws Exception {
-        Assert.assertEquals(true,authorService.getAllAuthors().size() > 0);
+        logger.debug("开始查询作者总人数");
+        authorService.getAllAuthors();
+//        Assert.assertEquals(true,authorService.getAllAuthors().size() > 0);
+        System.out.println(authorService.getAllAuthors());
+        logger.debug("查询作者人数成功");
+        logger.debug(authorService.getAllAuthors());
     }
 
     @Test
     public void getAllAuthorsCount() throws Exception {
-        Assert.assertEquals(true,authorService.getAllAuthorsCount() > 0);
+        authorService.getAllAuthorsCount();
+        logger.debug(authorService.getAllAuthorsCount());
+//        System.out.println(authorService.getAllAuthorsCount());
+//        Assert.assertEquals(true,authorService.getAllAuthorsCount() > 0);
+        System.out.println("查询所有作者成功");
     }
 
     @Test
     public void testAddAuthor() throws Exception {
-//        logger.debug("插入测试开始");
-        Assert.assertEquals(true,authorService.addAuthor(new Author(15, "发牌员小姐姐")) > 0);
+        logger.debug("插入测试开始");
+        Assert.assertEquals(true,authorService.addAuthor(new Author(88, "悟空")) > 0);
+//        logger.debug(authorService.addAuthor(new Author(10,"在线")));
+        logger.debug("插入测试结束");
     }
 
     @Test
@@ -47,11 +66,13 @@ public class AuthorServiceImplTest {
 
     @Test
     public void testUpdateAuthor() throws Exception {
-        Assert.assertEquals(true,authorService.updateAuthor(new Author(8, "狗子")) > 0);
+        Assert.assertEquals(true,authorService.updateAuthor(new Author(9, "玛里苟斯")) > 0);
     }
 
     @Test
     public void testGetAuthorById() throws Exception {
-        authorService.getAuthorById(7).getUsername();
+        authorService.getAuthorById(5).getUsername();
+        logger.debug(authorService.getAuthorById(5));
+//        System.out.println();
     }
 }

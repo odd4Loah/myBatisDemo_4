@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,12 +20,18 @@
     <mysql-connector-java.version>5.1.46</mysql-connector-java.version>
     <mybatis.version>3.4.6</mybatis.version>
     <junint.version>4.11</junint.version>
-    <repository>
-      <id>aliyun</id>
-      <name>aliyun</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-    </repository>
+
+
+
+
+    <!--<repository>-->
+      <!--<id>aliyun</id>-->
+      <!--<name>aliyun</name>-->
+      <!--<url>http://maven.aliyun.com/nexus/content/groups/public</url>-->
+    <!--</repository>-->
+
   </properties>
+
   <build>
     <!--会将src/main/java下的xml文件随同java编译后的class文件一同copy到相应的class目录-->
     <resources>
