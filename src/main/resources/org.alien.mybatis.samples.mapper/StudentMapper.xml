@@ -25,6 +25,10 @@
         SELECT * FROM student WHERE id = #{id}
     </select>
 
+    <select id="getStudentByName" parameterType="String" resultMap="student">
+        SELECT * FROM student WHERE username = #{username}
+    </select>
+
     <insert id="addStudent" parameterType="student">
         INSERT INTO student
         (id, username, qq_num, study_type, study_time, school, study_id, daily_link, promise, teach_bro,

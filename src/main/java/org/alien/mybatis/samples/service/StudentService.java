@@ -20,5 +20,5 @@ public interface StudentService {
 
     Student getStudentById(int id);
 
-
+    Student getStudentByName(String username);
 }

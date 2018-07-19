@@ -66,5 +66,12 @@ public class StudentServiceImplTest {
 
     }
 
+
+    @Test
+    public void testGetStudentByName() throws Exception {
+        studentService.getStudentByName("黄苏威");
+        logger.debug(studentService.getStudentByName("黄苏威"));
+    }
+
     //end_Test
 }

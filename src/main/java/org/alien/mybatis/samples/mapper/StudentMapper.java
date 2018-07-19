@@ -20,5 +20,7 @@ public interface StudentMapper {
 
     Student getStudentById(int id);
 
+    Student getStudentByName(String username);
+
 
 }

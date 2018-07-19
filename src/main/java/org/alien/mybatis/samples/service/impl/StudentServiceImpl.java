@@ -104,6 +104,31 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+    /**
+     * Query student by name.
+     *
+     * @param username student name
+     * @return String The number of rows affected by the query.
+     */
+
+    @Override
+    public Student getStudentByName(String username) {
+        SqlSession sqlSession = null;
+
+        try {
+            sqlSession = MybatisUtil.getSqlSession();
+            StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+
+            return studentMapper.getStudentByName(username);
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+
+
 
 
 
