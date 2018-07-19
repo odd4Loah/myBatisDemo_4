@@ -31,6 +31,10 @@ public class StudentServiceImpl implements StudentService {
             sqlSession = MybatisUtil.getSqlSession();
             StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
             int studentId = studentMapper.addStudent(student);
+
+//            System.out.println(studentId);
+
+
             sqlSession.commit();
             return studentId;
         } finally {

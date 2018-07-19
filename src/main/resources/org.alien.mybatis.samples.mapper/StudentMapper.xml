@@ -41,16 +41,11 @@
     </insert>
 
     <delete id="deleteStudent" parameterType="int">
-        DELETE FROM student
-        WHERE id = #{id}
+        DELETE FROM student WHERE id = #{id}
     </delete>
 
     <update id="updateStudent" parameterType="student">
-        UPDATE student
-        SET username = #{username}, school = #{school}, promise = #{promise}, know_us_from = #{know_us_from}
-        WHERE id = #{id}
+        UPDATE student SET username = #{username}, school = #{school}, promise = #{promise}, know_us_from = #{know_us_from} WHERE id = #{id}
     </update>
-
-
 
 </mapper>

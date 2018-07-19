@@ -12,6 +12,7 @@ import org.alien.mybatis.samples.model.Student;
 
 
 public interface StudentService {
+
     int addStudent(Student student);
 
     int deleteStudent(int id);

@@ -8,6 +8,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author lihoo
  * @Title: StudentServiceImplTest
@@ -37,22 +40,22 @@ public class StudentServiceImplTest {
     @Test
     public void testAddStudent() throws Exception {
         Assert.assertEquals(true,studentService.addStudent
-                (new Student(77,"看我蛇皮走位",85296374,
-                        "java工程师",528411501,"欧洲人大学",
+                (new Student(100,"大梁",85296374,
+                        "py工程师",528411501,"欧洲人大学",
                         "8856","https://www.odd4loah.cn","你把闪现赶紧给我交了",
-                        "大司马","这一手很强",15541661,
+                        "杀老师","这一手很强",15541661,
                         189856161)) > 0);
     }
 
     @Test
     public void testDeleteStudent() throws Exception {
-        Assert.assertEquals(true,studentService.deleteStudent(99) > 0);
+        Assert.assertEquals(true,studentService.deleteStudent(21) > 0);
     }
 //
     @Test
     public void testUpdateStudent() throws Exception {
         Assert.assertEquals(true,studentService.updateStudent
-                (new Student(20,"给你个BUFF",1999999999,
+                (new Student(20,"皮一下",1999999999,
                 "性感java工程师",5896247,"家里呆不下大学",
                 "18856","1https://www.odd4loah.cn","鎏金哇卡一库咧",
                 "星妈buff","狗啊你是",1577811661,
@@ -61,16 +64,15 @@ public class StudentServiceImplTest {
 
     @Test
     public void testGetStudentById() throws Exception {
-        studentService.getStudentById(11).getUsername();
-        logger.debug(studentService.getStudentById(11));
-
+        String sInfo = String.valueOf(studentService.getStudentById(8).getSchool()) ;
+        logger.debug(sInfo);
     }
 
 
     @Test
     public void testGetStudentByName() throws Exception {
-        studentService.getStudentByName("黄苏威");
-        logger.debug(studentService.getStudentByName("黄苏威"));
+        String sInfo = String.valueOf(studentService.getStudentByName("李时珍的皮"));
+            logger.debug(sInfo);
     }
 
     //end_Test
